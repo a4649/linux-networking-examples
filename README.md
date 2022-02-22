@@ -5,7 +5,7 @@ Based on https://access.redhat.com/sites/default/files/attachments/rh_ip_command
 
 ### 1. show / debbug network information
 
-## 1.1 network interfaces
+#### 1.1 network interfaces
 
 show all interfaces (list all interfaces with information: MAC, IP, Operational State, MTU) 
 
@@ -31,7 +31,7 @@ show optical port attributes (ex. eth0)
 
 ```sudo ethtool -m eth0```
 
-## 1.2 switching and routing
+#### 1.2 switching and routing
 
 show global routing table
 
