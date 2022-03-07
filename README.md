@@ -31,6 +31,12 @@ show optical port attributes (ex. eth0)
 
 ```sudo ethtool -m eth0```
 
+check maximum MTU in network segment
+
+```ping -M do -s [MTU-28*] [destination IP]```
+
+* 8 bytes for ICMP header and 20 bytes for Ethernet header
+
 #### 1.2 switching and routing
 
 show global routing table
