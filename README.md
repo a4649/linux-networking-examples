@@ -108,3 +108,9 @@ add route
 delete route 
 
 ```ip route del 192.168.19.0/24 via 192.168.1.254```
+
+### 4. Other
+
+Get public IP address:
+
+```dig +short myip.opendns.com @resolver1.opendns.com```
