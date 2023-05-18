@@ -115,7 +115,7 @@ Get public IP address:
 
 ```dig +short myip.opendns.com @resolver1.opendns.com```
 
-### 2. IPMI
+### 5. IPMI
 
 Restart machine from network
 
@@ -124,10 +124,15 @@ Restart machine from network
 Set IP Address
 
 ```ipmitool lan set 1 ipsrc static``` 
+
 ```ipmitool lan set 1 ipaddr <ip>```
+
 ```ipmitool lan set 1 netmask <mask>```
+
 ```ipmitool lan set 1 defgw ipaddr <gw-ip>```
+
 ```ipmitool lan set 1 defgw macaddr <gw-mac>```
+
 ```ipmitool lan set 1 arp respond on```
 
 Set password
@@ -137,6 +142,7 @@ Set password
 Set bootdevice
 
 ```ipmitool -I lanplus -H <host> -U $IPMIUSER -P $IPMIPASS chassis bootdev pxe```
+
 ```ipmitool -I lanplus -H <host> -U $IPMIUSER -P $IPMIPASS chassis bootdev pxe options=persistent```
 
 Get sensors
