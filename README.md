@@ -3,9 +3,17 @@ Linux networking commands and configuration examples cheat-sheet
 
 Based on https://access.redhat.com/sites/default/files/attachments/rh_ip_command_cheatsheet_1214_jcs_print.pdf
 
-### 1. show / debbug network information
+Contents
 
-#### 1.1 network interfaces
+1. [Show / debbug network information](#info)
+2. [Managing interfaces](#interfaces)
+3. [Routing](#routing)
+4. [Other](#other)
+5. [IPMI](#ipmi)
+
+## 1. Show / debbug network information <a name="info"></a>
+
+### 1.1 network interfaces
 
 show all interfaces (list all interfaces with information: MAC, IP, Operational State, MTU) 
 
@@ -37,7 +45,7 @@ check maximum MTU in network segment
 
 * 8 bytes for ICMP header and 20 bytes for Ethernet header
 
-#### 1.2 switching and routing
+### 1.2 switching and routing
 
 show global routing table
 
@@ -71,7 +79,7 @@ show IP from MAC
 
 ```ip neighbor | grep "mac-address" | cut -d" " -f1```
 
-### 2. Managing interfaces
+## 2. Managing interfaces <a name="interfaces"></a>
 
 Shutdown and shutup interfaces:
 
@@ -95,7 +103,7 @@ remove ip address of interface
 
 ```ip addr del 192.168.1.1/24 dev eth0```
 
-### 3. Manage routing
+## 3. Routing <a name="routing"></a>
 
 add default gateway
 
@@ -105,17 +113,21 @@ add route
 
 ```ip route add 192.168.19.0/24 via 192.168.1.254```
 
+add route with gateway not attached to local network
+
+```ip route add 192.168.19.0/24 via 192.168.1.254 dev eth0 onlink```
+
 delete route 
 
 ```ip route del 192.168.19.0/24 via 192.168.1.254```
 
-### 4. Other
+## 4. Other <a name="other"></a>
 
 Get public IP address:
 
 ```dig +short myip.opendns.com @resolver1.opendns.com```
 
-### 5. IPMI
+## 5. IPMI <a name="ipmi"></a>
 
 Restart machine from network
 
