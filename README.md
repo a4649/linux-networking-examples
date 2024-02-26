@@ -121,6 +121,12 @@ delete route
 
 ```ip route del 192.168.19.0/24 via 192.168.1.254```
 
+Enable routing with NAT:
+
+```iptables -A FORWARD -i <source-interface> -o <destination-interface> -j ACCEPT```
+```iptables -A FORWARD -i <destination-interface> -o <source-interface> -m state --state ESTABLISHED,RELATED -j ACCEPT```
+```iptables -t nat -A POSTROUTING -o <destination-interface> -j MASQUERADE```
+
 ## 4. Other <a name="other"></a>
 
 Get public IP address:
